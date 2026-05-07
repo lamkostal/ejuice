@@ -1,5 +1,5 @@
 :root {
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-family: Google Sans Flex, Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   /* Font color variables */
   --font-color-light: #ffffff;
   --font-color-dark: #021739;
@@ -8,9 +8,9 @@
   --font-weight-regular: 300;
   --font-weight-strong: 400;
 color:var(--font-color-dark);
-  background: #020024;
-  background: radial-gradient(circle, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
-  --btn-bg-regular: #064ca5;
+  background: #2a2394;
+  /* background: radial-gradient(circle, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%); */
+  --btn-bg-regular: #2a2394;
   --btn-bg-danger: #a51f13;
   --radius-sm: calc(2px + 0.25rem);
   --radius-md: calc(3px + 0.25rem);
@@ -122,13 +122,14 @@ h1 {
   margin: 0 0 var(--space-xl);
   letter-spacing: 0.08em;
   color: var(--font-color-light);
+  font-weight: var(--font-weight-strong);
 }
 h2{
   font-weight:var(--font-weight-regular);
 }
 
 .card {
-  background: #ffffff;
+  background: #dadada;
   border: 1px solid #e5e7eb;
   border-radius: var(--radius-lg);
   padding: var(--space-lg);
