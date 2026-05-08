@@ -17,7 +17,7 @@ color:var(--font-color-dark);
   --radius-lg: calc(5px + 0.25rem);
   --font-size-xs: calc(0.675rem + 0.1vw);
   --font-size-sm: calc(0.75rem + 0.12vw);
-  --font-size-md: calc(0.825rem + 0.14vw);
+  --font-size-md: calc(0.925rem + 0.14vw);
   --gap-xs: 4px;
   --gap-sm: 6px;
   --gap-md: 10px;
@@ -223,6 +223,27 @@ button.danger {
   border-collapse: collapse;
   margin-bottom: var(--space-md);
 }
+
+/* Info button in top-right */
+.info-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  color: var(--font-color-dark);
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 10px rgba(2,6,23,0.08);
+  cursor: pointer;
+  z-index: 1100;
+  font-size: var(--font-size-md);
+}
+.info-btn:hover { transform: translateY(-1px) }
 
 .results-table th,
 .results-table td {

@@ -1,5 +1,6 @@
 <script setup>
 import { computed, reactive, ref } from 'vue'
+import DisclaimerModal from './components/DisclaimerModal.vue'
 import BatchInputsCard from './components/BatchInputsCard.vue'
 import CostInputsCard from './components/CostInputsCard.vue'
 import FlavorsCard from './components/FlavorsCard.vue'
@@ -35,6 +36,7 @@ const form = reactive({
 const recipeName = ref('')
 const recipes = ref(getRecipes())
 const activeRecipe = ref('')
+const showDisclaimer = ref(false)
 
 const result = computed(() => calculateMix(form))
 
@@ -79,6 +81,7 @@ const onRecipeNameInput = (value) => {
     <p class="sub">Single-page calculator for e-liquid ingredient mixing.</p>
 
     <div class="layout">
+      <button class="info-btn" aria-label="Disclaimer" @click="showDisclaimer = true">ℹ</button>
       <div class="layout__left">
         <BatchInputsCard :form="form" />
         <FlavorsCard :flavors="form.flavors" @add="addFlavor" @remove="removeFlavor" />
@@ -96,6 +99,7 @@ const onRecipeNameInput = (value) => {
         />
       </div>
     </div>
+    <DisclaimerModal :open="showDisclaimer" @close="showDisclaimer = false" />
   </main>
 </template>
 
