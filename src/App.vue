@@ -29,7 +29,7 @@ const form = reactive({
   nicotineCostPerMl: '',
   pgCostPerMl: '',
   vgCostPerMl: '',
-  flavors: [createFlavor()],
+  flavors: [],
 })
 
 const recipeName = ref('')

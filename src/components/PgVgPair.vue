@@ -6,6 +6,8 @@ const props = defineProps({
   vgLabel: { type: String, default: 'VG (%)' },
   /** When true, shorter stacked labels and no extra wrapper grid for batch cards */
   compact: { type: Boolean, default: false },
+  /** When true, stack VG and PG vertically */
+  vertical: { type: Boolean, default: false },
 })
 
 const emit = defineEmits(['update:pg', 'update:vg'])
@@ -32,7 +34,7 @@ const onVgInput = (event) => {
 </script>
 
 <template>
-  <div class="pgvg-pair" :class="{ compact }">
+  <div class="pgvg-pair" :class="{ compact, vertical }">
     <label>
       {{ vgLabel }}
       <input
@@ -71,7 +73,21 @@ const onVgInput = (event) => {
   gap: 8px;
 }
 
+.pgvg-pair.vertical {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
 .pgvg-pair.compact label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  min-width: 0;
+}
+
+.pgvg-pair.vertical label {
   display: flex;
   flex-direction: column;
   gap: 6px;

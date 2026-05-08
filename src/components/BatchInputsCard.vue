@@ -15,31 +15,45 @@ defineProps({
 
     <fieldset class="input-group">
       <legend>Target</legend>
-      <div class="grid">
-        <label>Target Nicotine (mg/ml)<input v-model.number="form.targetNicotine" type="number" min="0" step="0.1" placeholder="e.g. 3" /></label>
-        <PgVgPair
-          :pg="form.targetPg"
-          :vg="form.targetVg"
-          @update:pg="(v) => (form.targetPg = v)"
-          @update:vg="(v) => (form.targetVg = v)"
-          vg-label="Target VG (%)"
-          pg-label="Target PG (%)"
-        />
+      <div class="two-col">
+        <div>
+          <label>Target Nicotine (mg/ml)
+            <input v-model.number="form.targetNicotine" type="number" min="0" step="0.1" placeholder="e.g. 3" />
+          </label>
+        </div>
+        <div>
+          <PgVgPair
+            vertical
+            :pg="form.targetPg"
+            :vg="form.targetVg"
+            @update:pg="(v) => (form.targetPg = v)"
+            @update:vg="(v) => (form.targetVg = v)"
+            vg-label="Target VG (%)"
+            pg-label="Target PG (%)"
+          />
+        </div>
       </div>
     </fieldset>
 
     <fieldset class="input-group">
       <legend>Nicotine base</legend>
-      <div class="grid">
-        <label>Nicotine Base Str (mg/ml)<input v-model.number="form.nicotineBaseStrength" type="number" min="0" step="0.1" placeholder="e.g. 100" /></label>
-        <PgVgPair
-          :pg="form.nicotineBasePg"
-          :vg="form.nicotineBaseVg"
-          @update:pg="(v) => (form.nicotineBasePg = v)"
-          @update:vg="(v) => (form.nicotineBaseVg = v)"
-          vg-label="Base VG (%)"
-          pg-label="Base PG (%)"
-        />
+      <div class="two-col">
+        <div>
+          <label>Nicotine Base Str (mg/ml)
+            <input v-model.number="form.nicotineBaseStrength" type="number" min="0" step="0.1" placeholder="e.g. 100" />
+          </label>
+        </div>
+        <div>
+          <PgVgPair
+            vertical
+            :pg="form.nicotineBasePg"
+            :vg="form.nicotineBaseVg"
+            @update:pg="(v) => (form.nicotineBasePg = v)"
+            @update:vg="(v) => (form.nicotineBaseVg = v)"
+            vg-label="Base VG (%)"
+            pg-label="Base PG (%)"
+          />
+        </div>
       </div>
     </fieldset>
   </section>
@@ -48,5 +62,18 @@ defineProps({
 <style scoped>
 .batch-volume {
   margin-bottom: 14px;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  align-items: start;
+}
+
+.two-col label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 </style>

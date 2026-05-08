@@ -82,34 +82,49 @@ export function calculateMix(input) {
   const pgCostPerMl = toNumber(input.pgCostPerMl)
   const vgCostPerMl = toNumber(input.vgCostPerMl)
 
+  // densities in g/ml
+  const DENSITY_PG = 1.036
+  const DENSITY_VG = 1.261
+
   const ingredients = [
-    { key: 'nicotine', name: 'Nicotine Base', ml: nicotineMl, cost: nicotineMl * nicotineCostPerMl },
-    { key: 'vg', name: 'VG', ml: Math.max(0, vgMl), cost: Math.max(0, vgMl) * vgCostPerMl },
-    { key: 'pg', name: 'PG', ml: Math.max(0, pgMl), cost: Math.max(0, pgMl) * pgCostPerMl },
+    { key: 'nicotine', name: 'Nicotine Base', ml: nicotineMl, cost: nicotineMl * nicotineCostPerMl, density: (nicotineBasePg / 100) * DENSITY_PG + (nicotineBaseVg / 100) * DENSITY_VG },
+    { key: 'vg', name: 'VG', ml: Math.max(0, vgMl), cost: Math.max(0, vgMl) * vgCostPerMl, density: DENSITY_VG },
+    { key: 'pg', name: 'PG', ml: Math.max(0, pgMl), cost: Math.max(0, pgMl) * pgCostPerMl, density: DENSITY_PG },
     ...flavors.map((flavor) => ({
       key: flavor.id,
       name: flavor.name,
       ml: flavor.ml,
       cost: flavor.ml * (flavor.costPer10Ml / 10),
+      density: (flavor.carrierPg / 100) * DENSITY_PG + (flavor.carrierVg / 100) * DENSITY_VG,
     })),
   ]
 
   const totalMl = ingredients.reduce((sum, ingredient) => sum + ingredient.ml, 0)
   const totalCost = ingredients.reduce((sum, ingredient) => sum + ingredient.cost, 0)
 
-  return {
-    warnings,
-    ingredients: ingredients.map((ingredient) => ({
+  const ingredientsWithGrams = ingredients.map((ingredient) => {
+    const mlRounded = round(ingredient.ml)
+    const grams = round(mlRounded * (ingredient.density || 1))
+    return {
       ...ingredient,
-      ml: round(ingredient.ml),
+      ml: mlRounded,
       percent: totalVolume > 0 ? round((ingredient.ml / totalVolume) * 100) : 0,
       cost: round(ingredient.cost),
-    })),
+      grams,
+    }
+  })
+
+  const totalGrams = ingredientsWithGrams.reduce((sum, ing) => sum + ing.grams, 0)
+
+  return {
+    warnings,
+    ingredients: ingredientsWithGrams,
     totals: {
       ml: round(totalMl),
       flavorPercent: round(totalFlavorPercent),
       cost: round(totalCost),
       costPerMl: totalVolume > 0 ? round(totalCost / totalVolume, 4) : 0,
+      grams: round(totalGrams),
     },
   }
 }

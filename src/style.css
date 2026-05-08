@@ -4,9 +4,9 @@
   --font-color-light: #ffffff;
   --font-color-dark: #021739;
   /* Font weight variables */
-   --font-weight-light: 200;
-  --font-weight-regular: 300;
-  --font-weight-strong: 400;
+   --font-weight-light: 100;
+  --font-weight-regular: 500;
+  --font-weight-strong: 700;
 color:var(--font-color-dark);
   background: #2a2394;
   /* background: radial-gradient(circle, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%); */
@@ -129,7 +129,7 @@ h2{
 }
 
 .card {
-  background: #dadada;
+  background: #cacaca;
   border: 1px solid #e5e7eb;
   border-radius: var(--radius-lg);
   padding: var(--space-lg);
@@ -246,8 +246,9 @@ button.danger {
 }
 
 .totals p {
-  margin: 0;
+  margin: 10px 0 0 0;
   font-weight: var(--font-weight-strong);
+  letter-spacing: 0.04rem;
 }
 
 .recipe-save {
