@@ -2,11 +2,12 @@
   font-family: Google Sans Flex, Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   /* Font color variables */
   --font-color-light: #ffffff;
-  --font-color-dark: #021739;
+  --font-color-dark: #282d64;
   /* Font weight variables */
    --font-weight-light: 100;
-  --font-weight-regular: 500;
-  --font-weight-strong: 700;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-strong: 650;
 color:var(--font-color-dark);
   background: #2a2394;
   /* background: radial-gradient(circle, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%); */
@@ -21,12 +22,12 @@ color:var(--font-color-dark);
   --gap-xs: 4px;
   --gap-sm: 6px;
   --gap-md: 10px;
-  --gap-lg: 12px;
+  --gap-lg: 18px;
   --space-xs: 4px ;
   --space-sm: 6px ;
   --space-md: 8px;
   --space-lg: 12px;
-  --space-xl: 15px;
+  --space-xl: 25px;
 }
 
 * {
@@ -125,7 +126,8 @@ h1 {
   font-weight: var(--font-weight-strong);
 }
 h2{
-  font-weight:var(--font-weight-regular);
+  font-weight:var(--font-weight-strong);
+  
 }
 
 .card {
@@ -167,7 +169,7 @@ label {
 input {
   border: 1px solid #d1d5db;
   border-radius: var(--radius-md);
-  padding: var(--space-sm) var(--space-md);
+  padding: var(--space-lg) var(--space-lg);
   font-size: var(--font-size-md);
 }
 
@@ -253,21 +255,22 @@ button.danger {
   font-size: var(--font-size-md);
   font-weight: var(--font-weight-regular);
 }
-
+.results-table th{font-weight: var(--font-weight-medium);}
 .results-table th:not(:first-child),
 .results-table td:not(:first-child) {
   text-align: right;
+  
 }
 
 .totals {
   display: flex;
-  gap: var(--gap-lg);
+  gap: var(--gap-md);
   flex-wrap: wrap;
 }
 
 .totals p {
   margin: 10px 0 0 0;
-  font-weight: var(--font-weight-strong);
+  font-weight: var(--font-weight-medium);
   letter-spacing: 0.04rem;
 }
 

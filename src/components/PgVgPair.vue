@@ -91,7 +91,6 @@ const onVgInput = (event) => {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  font-size: 14px;
   min-width: 0;
 }
 
