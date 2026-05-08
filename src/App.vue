@@ -76,12 +76,12 @@ const onRecipeNameInput = (value) => {
   <main class="container">
     <h1 class="app-title">
       <img :src="logo" alt="eJuice logo" class="logo" />
-      eJuice Calculator
+      e-Liquid Recipe Calculator
     </h1>
-    <p class="sub">Recipe Calculator for Vaping Liquid ingredient mixing.</p>
+    <p class="sub">Calculate vape juice ingredients, PG/VG ratio, nicotine strength, flavor percentages, and batch cost in one simple recipe tool.</p>
 
     <div class="layout">
-      <button class="info-btn" aria-label="Disclaimer" @click="showDisclaimer = true">ℹ</button>
+      <button class="info-btn" aria-label="Disclaimer" @click="showDisclaimer = true">i</button>
       <div class="layout__left">
         <BatchInputsCard :form="form" />
         <FlavorsCard :flavors="form.flavors" @add="addFlavor" @remove="removeFlavor" />

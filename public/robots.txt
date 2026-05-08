@@ -2,5 +2,4 @@
 User-agent: *
 Disallow:
 
-# Sitemap (replace with your full site URL)
-Sitemap: https://ejuice.pages.dev/sitemap.xml
+Sitemap: https://e-juice.site/sitemap.xml

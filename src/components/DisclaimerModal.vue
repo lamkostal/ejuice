@@ -22,18 +22,18 @@ watch(() => props.open, (v) => {
     <div class="modal-card">
       <header class="modal-header">
         <h3>Disclaimer & Safety Notice</h3>
-        <button class="modal-close" @click="$emit('close')">✕</button>
+        <button class="modal-close" @click="$emit('close')">x</button>
       </header>
       <div class="modal-body">
-        <p>These calculator is provided "as is" for informational purposes only. I strive for accuracy but make no guarantees—use results at your own risk. No warranties, express or implied, are provided, and I am not liable for any damages arising from use or misuse.</p>
+        <p>This calculator is provided as-is for informational purposes only. Check all measurements and calculations before mixing. Nicotine can be hazardous at high concentrations; handle it carefully and use appropriate protection.</p>
 
         <h4>Safety</h4>
         <ul>
           <li>Double-check all calculations before use and assume personal responsibility for verification.</li>
           <li>Nicotine is toxic at high concentrations; handle concentrated nicotine with extreme care and appropriate protection.</li>
-          <li>Lithium-ion batteries can be hazardous—learn battery safety, respect amp limits, and inspect equipment before use.</li>
+          <li>Lithium-ion batteries can be hazardous; learn battery safety, respect amp limits, and inspect equipment before use.</li>
           <li>After building coils, always measure resistance before firing and ensure battery compatibility.</li>
-          <li>Not all flavorings safe to eat are safe to inhale—research health effects of any agents you use.</li>
+          <li>Not all flavorings safe to eat are safe to inhale; research health effects of any agents you use.</li>
         </ul>
 
         <p>If unsure, consult multiple sources or seek professional advice.</p>

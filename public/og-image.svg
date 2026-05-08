@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Vape Juice Calculator</title>
+  <desc id="desc">DIY e-liquid recipe and cost calculator preview image.</desc>
+  <rect width="1200" height="630" fill="#f7fbff"/>
+  <rect x="70" y="70" width="1060" height="490" rx="28" fill="#ffffff" stroke="#d8e6f3" stroke-width="4"/>
+  <circle cx="200" cy="210" r="70" fill="#54b7d3"/>
+  <path d="M200 120c42 52 70 94 70 132 0 40-31 72-70 72s-70-32-70-72c0-38 28-80 70-132z" fill="#1d7e9a"/>
+  <text x="320" y="235" font-family="Arial, Helvetica, sans-serif" font-size="64" font-weight="700" fill="#14213d">Vape Juice Calculator</text>
+  <text x="320" y="315" font-family="Arial, Helvetica, sans-serif" font-size="34" fill="#334155">DIY e-liquid recipe, PG/VG ratio, nicotine strength,</text>
+  <text x="320" y="365" font-family="Arial, Helvetica, sans-serif" font-size="34" fill="#334155">flavor percentage, and batch cost calculator.</text>
+  <text x="320" y="455" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#1d7e9a">e-juice.site</text>
+</svg>

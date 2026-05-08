@@ -8,16 +8,16 @@ defineProps({
 
 <template>
   <section class="card">
-    <h2>Batch Inputs</h2>
+    <h2>Recipe Setup</h2>
     <div class="grid batch-volume">
-      <label>Total Volume (ml)<input v-model.number="form.totalVolume" type="number" min="0" step="0.1" placeholder="e.g. 60" /></label>
+      <label>Batch Size (ml)<input v-model.number="form.totalVolume" type="number" min="0" step="0.1" placeholder="e.g. 60" /></label>
     </div>
 
     <fieldset class="input-group">
-      <legend>Target</legend>
+      <legend>Target Mix</legend>
       <div class="two-col">
         <div>
-          <label>Target Nicotine (mg/ml)
+          <label>Target Nicotine Strength (mg/ml)
             <input v-model.number="form.targetNicotine" type="number" min="0" step="0.1" placeholder="e.g. 3" />
           </label>
         </div>
@@ -36,10 +36,10 @@ defineProps({
     </fieldset>
 
     <fieldset class="input-group">
-      <legend>Nicotine base</legend>
+      <legend>Nicotine Base</legend>
       <div class="two-col">
         <div>
-          <label>Nicotine Base Str (mg/ml)
+          <label>Nicotine Base Strength (mg/ml)
             <input v-model.number="form.nicotineBaseStrength" type="number" min="0" step="0.1" placeholder="e.g. 100" />
           </label>
         </div>

@@ -34,7 +34,7 @@ const onNicotineCostInput = (event) => {
 
 <template>
   <section class="card">
-    <h2>Cost Inputs</h2>
+    <h2>Ingredient Costs</h2>
     <div class="grid">
       <label>VG cost / L<input :value="vgDisplayValue()" type="number" min="0" step="0.01" placeholder="e.g. 15" @input="onVgCostInput" /></label>
       <label>PG cost / L<input :value="pgDisplayValue()" type="number" min="0" step="0.01" placeholder="e.g. 12" @input="onPgCostInput" /></label>

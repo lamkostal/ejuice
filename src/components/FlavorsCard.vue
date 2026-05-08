@@ -11,7 +11,7 @@ const emit = defineEmits(['add', 'remove'])
 <template>
   <section class="card">
     <div class="header-row">
-      <h2>Flavors</h2>
+      <h2>Flavor Concentrates</h2>
       <div class="header-row__actions">
         <button type="button" @click="emit('add')">Add Flavor</button>
       </div>

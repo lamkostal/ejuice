@@ -6,7 +6,7 @@ defineProps({
 
 <template>
   <section class="card">
-    <h2>Results</h2>
+    <h2>Recipe Results</h2>
     <ul v-if="result.warnings.length" class="warnings">
       <li v-for="warning in result.warnings" :key="warning">{{ warning }}</li>
     </ul>
@@ -27,10 +27,10 @@ defineProps({
       </table>
     </div>
     <div class="totals">
-      <p>Total Flavor: {{ result.totals.flavorPercent.toFixed(2) }}%</p>
+      <p>Total Flavor Concentrate: {{ result.totals.flavorPercent.toFixed(2) }}%</p>
       <p>Total Weight: {{ (result.totals.grams || 0).toFixed(2) }} g</p>
-      <p>Batch Cost: {{ result.totals.cost.toFixed(2) }}</p>
-      <p>Cost/ml: {{ result.totals.costPerMl.toFixed(4) }}</p>
+      <p>Estimated Batch Cost: {{ result.totals.cost.toFixed(2) }}</p>
+      <p>Cost per ml: {{ result.totals.costPerMl.toFixed(4) }}</p>
     </div>
   </section>
 </template>

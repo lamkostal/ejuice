@@ -9,7 +9,7 @@ const emit = defineEmits(['update:recipeName', 'save', 'load', 'remove'])
 
 <template>
   <section class="card">
-    <h2>Recipes</h2>
+    <h2>Saved Recipes</h2>
     <div class="recipe-save">
       <input
         :value="recipeName"

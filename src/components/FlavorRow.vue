@@ -10,7 +10,7 @@ const emit = defineEmits(['remove'])
 
 <template>
   <div class="flavor-row">
-    <input v-model.trim="flavor.name" placeholder="Flavor name" />
+    <input v-model.trim="flavor.name" placeholder="Flavor concentrate name" />
     <input v-model.number="flavor.percent" type="number" min="0" max="100" step="0.1" placeholder="%" />
     <PgVgPair
       :pg="flavor.carrierPg"
@@ -24,5 +24,4 @@ const emit = defineEmits(['remove'])
     <button type="button" class="danger" @click="emit('remove')">Remove</button>
   </div>
 </template>
-
 
