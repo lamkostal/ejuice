@@ -78,7 +78,7 @@ const onRecipeNameInput = (value) => {
       <img :src="logo" alt="eJuice logo" class="logo" />
       eJuice Calculator
     </h1>
-    <p class="sub">Single-page calculator for e-liquid ingredient mixing.</p>
+    <p class="sub">Recipe Calculator for Vaping Liquid ingredient mixing.</p>
 
     <div class="layout">
       <button class="info-btn" aria-label="Disclaimer" @click="showDisclaimer = true">ℹ</button>
