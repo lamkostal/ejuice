@@ -2,17 +2,17 @@
   font-family: Google Sans Flex, Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   /* Font color variables */
   --font-color-light: #ffffff;
-  --font-color-dark: #282d64;
+  --font-color-dark: #e7e7e7;
   /* Font weight variables */
-   --font-weight-light: 100;
+   --font-weight-light: 150;
   --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-strong: 650;
 color:var(--font-color-dark);
   background: #2a2394;
   /* background: radial-gradient(circle, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%); */
-  --btn-bg-regular: #2a2394;
-  --btn-bg-danger: #a51f13;
+  --btn-bg-regular: #0086ac;
+  --btn-bg-danger: #c11e0f;
   --radius-sm: calc(2px + 0.25rem);
   --radius-md: calc(3px + 0.25rem);
   --radius-lg: calc(5px + 0.25rem);
@@ -127,11 +127,12 @@ h1 {
 }
 h2{
   font-weight:var(--font-weight-strong);
+  margin-block: var(--space-lg);
   
 }
 
 .card {
-  background: #dbdbdb;
+  /* background: #dbdbdb; */
   border-radius: var(--radius-lg);
   padding: var(--space-lg);
   margin-bottom: var(--space-lg);
@@ -141,7 +142,6 @@ h2{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: var(--space-md);
 }
 
 .grid {
@@ -236,7 +236,7 @@ button.danger {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #ffffff;
+  background: var(--btn-bg-regular);
   color: var(--font-color-dark);
   border: 1px solid #e5e7eb;
   box-shadow: 0 4px 10px rgba(2,6,23,0.08);

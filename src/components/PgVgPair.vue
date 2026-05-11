@@ -75,7 +75,7 @@ const onVgInput = (event) => {
 
 .pgvg-pair.vertical {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 8px;
 }
 
