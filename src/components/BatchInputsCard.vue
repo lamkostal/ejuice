@@ -15,7 +15,7 @@ defineProps({
 
     <fieldset class="input-group">
       <legend>Target Mix</legend>
-      <div class="two-col">
+      <div class="one-col">
         <div>
           <label>Target Nicotine Strength (mg/ml)
             <input v-model.number="form.targetNicotine" type="number" min="0" step="0.1" placeholder="e.g. 3" />
@@ -37,7 +37,7 @@ defineProps({
 
     <fieldset class="input-group">
       <legend>Nicotine Base</legend>
-      <div class="two-col">
+      <div class="one-col">
         <div>
           <label>Nicotine Base Strength (mg/ml)
             <input v-model.number="form.nicotineBaseStrength" type="number" min="0" step="0.1" placeholder="e.g. 100" />
@@ -64,14 +64,14 @@ defineProps({
   margin-bottom: 14px;
 }
 
-.two-col {
+.one-col {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 12px;
   align-items: start;
 }
 
-.two-col label {
+.one-col label {
   display: flex;
   flex-direction: column;
   gap: 6px;
