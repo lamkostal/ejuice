@@ -4,7 +4,19 @@ defineProps({
   recipes: { type: Array, required: true },
 })
 
-const emit = defineEmits(['update:recipeName', 'save', 'load', 'remove'])
+const emit = defineEmits(['update:recipeName', 'save', 'load', 'remove', 'record-use'])
+
+const formatDate = (iso) => {
+  try {
+    const d = new Date(iso)
+    const dd = String(d.getDate()).padStart(2, '0')
+    const mm = String(d.getMonth() + 1).padStart(2, '0')
+    const yyyy = d.getFullYear()
+    return `${dd}/${mm}/${yyyy}`
+  } catch {
+    return iso
+  }
+}
 </script>
 
 <template>
@@ -20,10 +32,18 @@ const emit = defineEmits(['update:recipeName', 'save', 'load', 'remove'])
     </div>
     <ul class="recipes">
       <li v-for="recipe in recipes" :key="recipe.name">
-        <span>{{ recipe.name }}</span>
-        <div>
-          <button type="button" @click="emit('load', recipe.name)">Load</button>
-          <button type="button" class="danger" @click="emit('remove', recipe.name)">Delete</button>
+        <div class="recipe-row">
+          <span class="recipe-name">{{ recipe.name }}</span>
+          <div class="recipe-actions">
+            <div class="actions-buttons">
+              <button type="button" @click="emit('load', recipe.name)">Load</button>
+              <button type="button" @click="emit('record-use', recipe.name)">Record Use</button>
+              <button type="button" class="danger" @click="emit('remove', recipe.name)">Delete</button>
+            </div>
+            <ul class="used-dates" v-if="recipe.usedDates && recipe.usedDates.length">
+              <li v-for="d in recipe.usedDates" :key="d">{{ formatDate(d) }}</li>
+            </ul>
+          </div>
         </div>
       </li>
     </ul>

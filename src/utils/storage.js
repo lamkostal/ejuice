@@ -22,3 +22,19 @@ export function deleteRecipe(name) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(next))
   return next
 }
+
+export function recordRecipeUse(name) {
+  const recipes = getRecipes()
+  const next = recipes.map((recipe) => {
+    if (recipe.name !== name) return recipe
+    const usedDates = Array.isArray(recipe.usedDates) ? [...recipe.usedDates] : []
+    const nowIso = new Date().toISOString()
+    const today = nowIso.slice(0, 10) // YYYY-MM-DD
+    const alreadyRecorded = usedDates.some((d) => String(d).slice(0, 10) === today)
+    if (alreadyRecorded) return recipe
+    usedDates.unshift(nowIso)
+    return { ...recipe, usedDates, updatedAt: nowIso }
+  })
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(next))
+  return next
+}

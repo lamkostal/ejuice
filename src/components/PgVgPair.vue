@@ -96,5 +96,6 @@ const onVgInput = (event) => {
 
 .pgvg-pair.compact input {
   min-width: 0;
+  font-size: var(--font-size-xs);
 }
 </style>

@@ -7,7 +7,7 @@ import FlavorsCard from './components/FlavorsCard.vue'
 import RecipesCard from './components/RecipesCard.vue'
 import ResultsCard from './components/ResultsCard.vue'
 import { calculateMix } from './utils/calculations'
-import { deleteRecipe, getRecipes, saveRecipe } from './utils/storage'
+import { deleteRecipe, getRecipes, saveRecipe, recordRecipeUse } from './utils/storage'
 import logo from './assets/droplet-logo.svg'
 
 const createFlavor = () => ({
@@ -67,6 +67,10 @@ const removeRecipe = (name) => {
   if (activeRecipe.value === name) activeRecipe.value = ''
 }
 
+const recordUse = (name) => {
+  recipes.value = recordRecipeUse(name)
+}
+
 const onRecipeNameInput = (value) => {
   recipeName.value = value
 }
@@ -95,7 +99,8 @@ const onRecipeNameInput = (value) => {
           @update:recipe-name="onRecipeNameInput"
           @save="saveCurrentRecipe"
           @load="loadRecipe"
-          @remove="removeRecipe"
+            @remove="removeRecipe"
+            @record-use="recordUse"
         />
       </div>
     </div>
